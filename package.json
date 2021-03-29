@@ -1,0 +1,18 @@
+{
+  "name": "maratona_discover2.0",
+  "version": "1.0.0",
+  "main": "index.0",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "repository": "git@github.com:martinsgabriel1956/jobs_calc-maratona_discover2.git",
+  "author": "Gabriel Martins <martinsgabriel1956@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
