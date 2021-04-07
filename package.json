@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "main": "index.0",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "init-db": "node src/db/init.js" 
   },
   "repository": "git@github.com:martinsgabriel1956/jobs_calc-maratona_discover2.git",
   "author": "Gabriel Martins <martinsgabriel1956@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sqlite": "^4.0.21",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

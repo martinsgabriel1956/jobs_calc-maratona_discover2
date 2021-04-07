@@ -3,9 +3,9 @@ const JobUtils = require('../utils/JobUtils');
 const Profile = require('../model/Profile');
 
 module.exports = {
-  index(req, res) {
-    const jobs = Job.get();
-    const profile = Profile.get();
+  async index(req, res) {
+    const jobs = await Job.get();
+    const profile = await Profile.get();
 
     let statusCount = {
       progress: 0,
@@ -16,7 +16,7 @@ module.exports = {
     // a quantidade de horas por dia de cada job em progress
     let jobTotalHours = 0;
 
-    const updatedJobs = jobs.map((job) => {
+    const updatedJobs = jobs.map(job => {
       // Ajustar o job
       const remaining = JobUtils.remainingDays(job);
       // Verifica se o status do projeto está em andamento ou finalizado

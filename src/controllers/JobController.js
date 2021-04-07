@@ -6,27 +6,23 @@ module.exports = {
   create(req, res) {
     return res.render("job");
   },
-  save(req, res) {
-    const jobs = Job.get();
-    // Pega o posicionamento do índice dentro do array
-    const lastId = jobs[jobs.length - 1]?.id || 0;
-    
+  async save(req, res) {
     //Cria em envia os trabalhos para o array Jobs
-    jobs.push({
-      id: lastId + 1,
+    await Job.create({
       name: req.body.name,
       "daily-hours": req.body["daily-hours"],
       "total-hours": req.body["total-hours"],
       //atribui uma nova data
       created_at: Date.now(),
-    });
+    })
+
     // Para retornar para a página inicial
     return res.redirect("/");
   },
-  show(req, res) {
-    const jobs = Job.get();
+  async show(req, res) {
+    const jobs = await Job.get();
     // Pega as informações de todos os jobs
-    const profile = Profile.get();
+    const profile = await Profile.get();
 
     const jobId = req.params.id;
 
@@ -39,42 +35,25 @@ module.exports = {
 
     return res.render("job-edit", { job });
   },
-  update(req, res) {
-    // Pega as informações de todos os jobs
-    const jobs = Job.get();
-    
+  async update(req, res) {
     const jobId = req.params.id;
-
-    // Buscar o id dentro do array
-    const job = jobs.find(job => Number(job.id) === Number(jobId));
-
-    if (!job) res.send("Job not found!");
 
     // Cria o objeto com os dados existentes mais os atualizados
     const updatedJob = {
-      ...job,
       name: req.body.name,
       "total-hours": req.body["total-hours"],
       "daily-hours": req.body["daily-hours"],
     };
 
-    const newJob = jobs.map((job) => {
-      if (Number(job.id) === Number(jobId)) {
-        job = updatedJob;
-      }
-
-      return job;
-    });
-
     // Atualiza as informações dos jobs
-    Job.update(newJob);
+    await Job.update(updatedJob, jobId);
 
-    return res.redirect("/job/" + jobId);
+    res.redirect("/job/" + jobId);
   },
-  delete(req, res) {
+  async delete(req, res) {
     const jobId = req.params.id;
 
-    Job.delete(jobId);
+    await Job.delete(jobId);
 
     return res.redirect("/");
   },

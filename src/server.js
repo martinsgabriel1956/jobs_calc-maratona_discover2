@@ -19,4 +19,4 @@ server.use(express.urlencoded({ extended: true }))
 server.use(routes);
 
 // Responsável por iniciar o servidor na porta que decidimos abaixo
-server.listen(3000, () => console.log('Iniciou'));
+server.listen(3000, () => console.log('Server started 🚀'));
