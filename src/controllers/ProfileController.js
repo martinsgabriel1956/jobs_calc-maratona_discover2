@@ -1,10 +1,12 @@
 const Profile = require('../model/Profile');
+const ProfileUtils = require('../utils/ProfileUtils')
 
 module.exports = {
   async index(req, res) {
     const profile = await Profile.get();
+    const currentValue = await ProfileUtils.url();
 
-    return res.render( "profile", { profile })
+    return res.render( "profile", { profile, currentValue })
   },
   async update(req, res) {
     const profile = await Profile.get();
