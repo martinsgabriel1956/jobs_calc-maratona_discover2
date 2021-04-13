@@ -1,10 +1,10 @@
 {
   "name": "maratona_discover2.0",
   "version": "1.0.0",
-  "main": "index.0",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "init-db": "node src/db/init.js" 
+    "init-db": "node src/db/init.js"
   },
   "repository": "git@github.com:martinsgabriel1956/jobs_calc-maratona_discover2.git",
   "author": "Gabriel Martins <martinsgabriel1956@gmail.com>",
