@@ -55,6 +55,11 @@
       </div>
     </header>
 
+    <div class="toggle">
+      <input type="checkbox" id="switch" name="theme" >
+      <label for="switch" id="toggle-theme" class="switch-theme dash-switch">Toggle</label>
+    </div>
+    
     <div class="container">
       <main class="animate-up delay-2">
         <h1 class="sr-only">Trabalhos</h1>
@@ -98,5 +103,6 @@
     <!-- end container -->
     <%- include ('parts/modal', { id: `${jobs.id}` }) %>
     <!-- end modal-wrapper -->
+    <%- include('parts/footer') %>
   </body>
 </html>

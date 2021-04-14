@@ -4,7 +4,7 @@
 
 aside.card {
   background: var(--color-card-background);
-  color: var(--color-card-title);
+  color: #595965;
 
   border: 1px solid #E1E3E6;
   border-radius: .313rem;

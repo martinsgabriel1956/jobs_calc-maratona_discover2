@@ -23,10 +23,13 @@
   --color-card-title: #5A5A66;
   --color-card-label: #BFBFCC;
   --color-card-content: #787880;
+  --color-card-hover: linear-gradient(90deg, rgba(250, 156, 45, 0.1) 0.45%, rgba(252, 253, 255, 0.1) 31.4%),
+  #FFF;
   
   --color-cancel: #E1E3E5;
   --color-delete: #EB3B35; 
   --color-save: #36B336;
+  --color-secondary-green-hover: #3CC73C;
   --color-badge-progress-text: var(--color-save);
   --color-badge-progress-background: #E8F8E8;
   --color-badge-done-text: var(--color-delete);
@@ -63,6 +66,9 @@
 /* tags styling */
 body {
   background: var(--color-background);
+  overflow-x: hidden;
+  margin: auto;
+  position: relative;
 }
 
 body,
@@ -118,4 +124,8 @@ a {
   --color-border-dark: #8358E3;
   --color-save: #FA9C2D;
   --color-secondary-hover: #EB8A1D;
+  --color-secondary:#6944b9;
+  --color-secondary-green-hover: #8358E3;
+  --color-card-hover: linear-gradient(90deg, rgba(134, 45, 250, 0.1) 0.45%, rgba(252, 253, 255, 0.1) 31.4%),
+  #FFF;
 }

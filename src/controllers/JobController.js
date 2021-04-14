@@ -33,6 +33,8 @@ module.exports = {
 
     job.budget = JobUtils.calculateBudget(job, profile["value-hour"]);
 
+    job.budgetConverted = JobUtils.convertCalculateBudget(job, profile["value-hour"]);
+
     return res.render("job-edit", { job });
   },
   async update(req, res) {

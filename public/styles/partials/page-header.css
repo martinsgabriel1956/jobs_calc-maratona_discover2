@@ -36,7 +36,7 @@ input[type=checkbox]{
   visibility: hidden;
 }
 
-#toggle-theme {
+.switch-theme {
   cursor: pointer;
   text-indent: -9999px;
   top: 0px;
@@ -48,7 +48,7 @@ input[type=checkbox]{
   position: relative;
 }
 
-#toggle-theme::after{
+.switch-theme::after{
   content: '';
   position: absolute;
   top: 3px;
@@ -60,11 +60,16 @@ input[type=checkbox]{
   transition: 0.3s;
 }
 
-input:checked + #toggle-theme {
+input:checked + .switch-theme {
   background-color: #6944b9;
 }
 
-input:checked + #toggle-theme::after {
+input:checked + .switch-theme::after {
   left: calc(100% - 3px);
   transform: translateX(-100%);
+}
+
+.dash-switch {
+  top: -68px; 
+  left: -128px;
 }

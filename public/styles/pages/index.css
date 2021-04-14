@@ -165,9 +165,7 @@ main {
 }
 
 .card:hover {
-  background: 
-  linear-gradient(90deg, rgba(250, 156, 45, 0.1) 0.45%, rgba(252, 253, 255, 0.1) 31.4%),
-    #FFF;
+  background: var(--color-card-hover);
 }
 
 .card::before {
