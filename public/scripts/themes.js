@@ -1,14 +1,27 @@
-const elements = {
-  btn: document.getElementById('switch'),
-  body: document.querySelector('body'),
-} 
+let btn = document.querySelector("#switch");
 
-elements.btn.addEventListener('change', ({ target }) => {
-  localStorage.setItem('darkmode', target.checked)
-  if(target.checked) {
-    elements.body.classList.add('darkmode');
-    localStorage.getItem('darkmode');
+const initTheme = () => {
+  let darkThemeSelected = (localStorage.getItem('#switch') !== null && localStorage.getItem('#switch') === 'darkmode');
+  
+  btn.checked = darkThemeSelected;
+  
+  darkThemeSelected ? document.body.classList.add('darkmode') : document.body.classList.remove('darkmode');
+}
+
+const resetTheme = () => {
+  if(btn.checked) {
+    document.body.classList.add('darkmode');
+    localStorage.setItem('#switch', 'darkmode');
   } else {
-    elements.body.classList.remove('darkmode');
+    document.body.classList.remove('darkmode');
+    localStorage.removeItem('#switch', 'darkmode');
   }
-});
+}
+
+if(btn) {
+  initTheme();
+
+  btn.addEventListener('change', () => {
+    resetTheme();
+  })
+}
