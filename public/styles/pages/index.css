@@ -65,7 +65,7 @@
   width: 4rem; /* 64px of 16px root*/
   height: 4rem; /* 64px of 16px root*/
   border-radius: 50%;
-  border: 0.156rem solid #F1972C; /* 2.5px of 16px root*/
+  border: 0.156rem solid var(--color-secondary); /* 2.5px of 16px root*/
 }
 
 /* 
@@ -167,7 +167,7 @@ main {
 .card:hover {
   background: 
   linear-gradient(90deg, rgba(250, 156, 45, 0.1) 0.45%, rgba(252, 253, 255, 0.1) 31.4%),
-    white;
+    #FFF;
 }
 
 .card::before {

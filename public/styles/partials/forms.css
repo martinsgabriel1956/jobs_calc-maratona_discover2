@@ -33,7 +33,7 @@ label {
 
   font-family: IBM Plex Sans;
   font-weight: 500;
-  color: #787880;
+  color: var(--color-card-content);
 
   margin-bottom: 1rem;
 }

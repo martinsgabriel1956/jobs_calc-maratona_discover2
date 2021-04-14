@@ -37,7 +37,7 @@ button.button {
 }
 
 .button.green:hover {
-  background: #3CC73C;
+  background: var(--color-secondary-hover);
 }
 
 .button.gray {

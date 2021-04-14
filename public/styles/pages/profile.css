@@ -21,7 +21,7 @@ aside.card {
 aside img {
   border-radius: 50%;
 
-  border: .25rem var(--color-secondary) solid;
+  border: .25rem var(--color-border) solid;
 
   width: 11.25rem;
   height: 11.25rem;

@@ -25,3 +25,46 @@
 
   color: var(--color-header-inner-title);
 }
+
+.toggle {
+  position: relative;
+}
+
+input[type=checkbox]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+#toggle-theme {
+  cursor: pointer;
+  text-indent: -9999px;
+  top: 0px;
+  width: 48px;
+  height: 24px;
+  background: grey;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+#toggle-theme::after{
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + #toggle-theme {
+  background-color: #6944b9;
+}
+
+input:checked + #toggle-theme::after {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
