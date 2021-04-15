@@ -21,7 +21,7 @@
   font-size: 1rem;
 }
 
-#notification img {
+#notification svg {
   margin-right: 0.5rem; /* 8px of 16px root*/
 }
 
@@ -223,6 +223,14 @@ main {
 .column.actions button img {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.dark-logo {
+  fill: var(--color-secondary);
+}
+
+.svg-alert {
+  stroke: var(--color-secondary);
 }
 
 @media(max-width:1390px) {
