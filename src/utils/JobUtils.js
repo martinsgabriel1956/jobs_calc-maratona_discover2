@@ -1,6 +1,4 @@
-const fetch = require('node-fetch');
-
-const JobUtils = {
+module.exports = {
   remainingDays(job) {
     // Calculo do tempo restante do projeto
     const remainingDays = (job["total-hours"] / job["daily-hours"]).toFixed();
@@ -20,14 +18,4 @@ const JobUtils = {
     return dayDiff;
   },
   calculateBudget: (job, valueHour) => valueHour * job["total-hours"],
-
-  async convertCalculateBudget (valueHour, job) {
-    const response = await fetch ('https://economia.awesomeapi.com.br/BRL-USD/')
-    const data = await response.json();
-
-    let currentValue = (valueHour * job["total-hours"]) / data[0].high;
-
-    return currentValue.toFixed(2);
-  },
 }
-module.exports = JobUtils;

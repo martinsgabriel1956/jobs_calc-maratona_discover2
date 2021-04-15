@@ -104,6 +104,7 @@
             <div class="amount column">
               <span>Valor</span>
               <p>R$ <%= job.budget.toFixed(2).replace('.', ',') %></p>
+              <p>U$ <%= (job['total-hours'] * currentValue).toFixed(2).replace('.', ',') %></p>
             </div>
             <div class="status badge column">
               <%= job.status === 'done' ? 'Encerrado' : 'Em andamento'%>

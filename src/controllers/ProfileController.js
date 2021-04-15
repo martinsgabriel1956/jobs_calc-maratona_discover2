@@ -1,12 +1,14 @@
 const Profile = require('../model/Profile');
+const Job = require('../model/Job');
 const ProfileUtils = require('../utils/ProfileUtils')
 
 module.exports = {
   async index(req, res) {
     const profile = await Profile.get();
     const currentValue = await ProfileUtils.url();
+    const jobs = await Job.get();
 
-    return res.render( "profile", { profile, currentValue })
+    return res.render( "profile", { profile, currentValue, jobs })
   },
   async update(req, res) {
     const profile = await Profile.get();

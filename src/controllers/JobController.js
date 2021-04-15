@@ -1,5 +1,6 @@
 const Job = require('../model/Job');
 const JobUtils = require('../utils/JobUtils');
+const ProfileUtils = require('../utils/ProfileUtils');
 const Profile = require('../model/Profile');
 
 module.exports = {
@@ -24,6 +25,8 @@ module.exports = {
     // Pega as informações de todos os jobs
     const profile = await Profile.get();
 
+    const currentValue = await ProfileUtils.url();
+
     const jobId = req.params.id;
 
     // Buscar o id dentro do array
@@ -33,9 +36,7 @@ module.exports = {
 
     job.budget = JobUtils.calculateBudget(job, profile["value-hour"]);
 
-    job.budgetConverted = JobUtils.convertCalculateBudget(job, profile["value-hour"]);
-
-    return res.render("job-edit", { job });
+    return res.render("job-edit", { job, currentValue });
   },
   async update(req, res) {
     const jobId = req.params.id;
